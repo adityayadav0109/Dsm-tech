@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Based website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1>Our certificate & Online programs</h1>
+    </section>
+    <!-- -----blog--------- -->
+    <section class="blog-content">
+        <div class="row">
+            <div class="blog-left">
+                <img src="images/certificate.jpg" alt="">
+                <h2>Our certificate & Online programs</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, nostrum. Corrupti quia ad
+                    tempore perspiciatis quas illum tenetur eius odit fugiat est architecto in magni fugit ullam dolore
+                    maiores, sapiente incidunt repellat accusantium temporibus labore beatae libero unde repellendus.
+                    Accusamus nisi quos sunt quibusdam tempora officiis, natus minus iure quisquam.</p>
+                <br>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, minima ipsa possimus rem consequuntur
+                    explicabo eaque soluta aliquid maxime velit, incidunt nisi quo aspernatur beatae voluptate
+                    consequatur! Delectus incidunt molestiae quisquam quo odio autem dolore quia libero reiciendis
+                    suscipit eaque consectetur eum nostrum, voluptas totam reprehenderit ratione aliquam? Unde non
+                    distinctio deserunt commodi exercitationem quibusdam quisquam pariatur nulla ad repellat asperiores,
+                    in iste aperiam. Est, nemo. Aliquid id soluta delectus dolorum. Rerum quibusdam reprehenderit
+                    quaerat obcaecati sequi, atque sapiente at?</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur officia quas quidem. Tenetur,
+                    ipsa? Doloribus non, tempore blanditiis architecto voluptatem, odio repellat neque magni sit vero
+                    nihil! Consequatur, similique alias?</p>
+
+                    <div class="comment-box">
+                        <h3>Leave a comment</h3>
+                        <form class="comment-form">
+                            <input type="text" placeholder="Enter name">
+                            <input type="email" placeholder="Enter email">
+                            <textarea rows="5" placeholder="Your comment"></textarea>
+                            <button type="submit" class="hero-btn red-btn">Post COMMENT</button>
+                        </form>
+                    </div>
+            </div>
+            <div class="blog-right">
+                <h3>Post Category</h3>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+                <div>
+                    <span>Business Analytics</span>
+                    <span>21</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>About us</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias commodi voluptas velit modi nobis tempore?
+            Itaque molestiae similique reiciendis aliquid?</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <div class="copyright">&copy;   DSM Tech LLC . All rights reserved.</div>
+    </section>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
