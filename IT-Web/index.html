@@ -33,7 +33,13 @@
       </nav>
 
       <div class="text-box">
-        <h1 id="animated-heading">We Code, We Secure, We Deliver... Dream Delivery Partner</h1>
+        <div class="anime">
+
+
+          <div id="tagline"></div>
+
+        </div>
+        <h1 >Dream Delivery Partner</h1>
         <p>
           <br />Welcome to DSM Tech LLC , your trusted partner in the world of IT solutions. We specialize in providing end-to-end
           services that cover the entire software development lifecycle. From the initial code concept and development to rigorous
@@ -84,23 +90,23 @@
 
       <div class="row">
         <div class="campus-col">
-          <img src="images/london.png" alt="" />
+          <img src="new-images/Picsart_23-10-08_00-15-27-455.jpg" alt="" />
           <div class="layer">
-            <h3>london</h3>
+            <h3>Front-End</h3>
           </div>
         </div>
 
         <div class="campus-col">
-          <img src="images/newyork.png" alt="" />
+          <img src="new-images/Picsart_23-10-08_00-16-38-520.jpg" alt="" />
           <div class="layer">
-            <h3>new york</h3>
+            <h3>Design</h3>
           </div>
         </div>
 
         <div class="campus-col">
-          <img src="images/washington.png" alt="" />
+          <img src="new-images/Picsart_23-10-08_00-15-58-960.jpg" alt="" />
           <div class="layer">
-            <h3>washington</h3>
+            <h3>Back-End</h3>
           </div>
         </div>
       </div>
@@ -111,41 +117,41 @@
       <h1>The Wide Array of Our Services</h1>
       <div class="row">
         <div class="facility-col">
-          <img src="images/web.jpg" alt="" />
+          <img src="new-images/web.jpg" alt="" />
           <h3>Web Development</h3>
           <p>
             Need a powerful web application to streamline your business processes or engage with your customers? Our web app development team has you covered with robust, scalable solutions.
           </p>
         </div>
         <div class="facility-col">
-          <img src="images/app2.jpg" alt="" />
+          <img src="new-images/app.jpg" alt="" />
           <h3>Android Development</h3>
           <p>
             Design is at the core of every great app. We create visually appealing and intuitive Android apps that provide exceptional user experiences, keeping your audience engaged and satisfied.
           </p>
         </div>
         <div class="facility-col">
-          <img src="images/crm.jpg" alt="" />
+          <img src="new-images/crm.jpg" alt="" />
           <h3>CRM</h3>
           <p>Gain valuable insights into your customers with a comprehensive 360-degree view. Our CRM systems consolidate customer data from various sources to provide a holistic perspective.
           </p>
         </div>
         <div class="facility-col">
-          <img src="images/test.jpg" alt="" />
+          <img src="new-images/tsting.jpg" alt="" />
           <h3>Software Testing</h3>
           <p>
             Trust in the performance of your software is paramount. Our software testing services focus on meticulous quality assurance, from functional testing to performance optimization, to deliver software that exceeds expectations.
           </p>
         </div>
         <div class="facility-col">
-          <img src="images/cs.jpg" alt="" />
+          <img src="new-images/cyber.jpg" alt="" />
           <h3>Cyber Security</h3>
           <p>
             We implement a layered approach to cybersecurity, ensuring multiple levels of protection. Our strategies encompass network security, endpoint security, and data security to fortify your defenses.
           </p>
         </div>
         <div class="facility-col">
-          <img src="images/do.jpg" alt="" />
+          <img src="new-images/devops.jpg" alt="" />
           <h3>DevOps</h3>
           <p>
             Achieve operational excellence with automation. We integrate and configure the right tools to automate repetitive tasks, reducing manual effort and minimizing errors.
@@ -220,17 +226,43 @@
     </section>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const heading = document.getElementById('animated-heading');
-        heading.classList.add('typing');
+      const taglineParts = ["We Secure", "We Code", "We Deliver"];
+    const taglineElement = document.getElementById('tagline');
+    let currentPartIndex = 0;
 
-        heading.addEventListener('animationiteration', function() {
-          heading.classList.remove('typing');
-          void heading.offsetWidth; // Trigger reflow to restart animation
-          heading.classList.add('typing');
-        });
+    function typeText(text, callback) {
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        taglineElement.textContent = text.slice(0, i);
+        i++;
+        if (i > text.length) {
+          clearInterval(typingInterval);
+          setTimeout(callback, 1000); // Wait for 1 second after typing
+        }
+      }, 100);
+    }
+
+    function eraseText(callback) {
+      let i = taglineElement.textContent.length;
+      const erasingInterval = setInterval(() => {
+        taglineElement.textContent = taglineElement.textContent.slice(0, i);
+        i--;
+        if (i < 0) {
+          clearInterval(erasingInterval);
+          setTimeout(callback, 1000); // Wait for 1 second after erasing
+        }
+      }, 100);
+    }
+
+    function nextTagline() {
+      eraseText(() => {
+        currentPartIndex = (currentPartIndex + 1) % taglineParts.length;
+        typeText(taglineParts[currentPartIndex], nextTagline);
       });
+    }
 
+    // Start the animation
+    typeText(taglineParts[currentPartIndex], nextTagline);
 
 
       

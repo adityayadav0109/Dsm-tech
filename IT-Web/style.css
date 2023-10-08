@@ -9,17 +9,23 @@ font-family: 'Ubuntu', sans-serif;
 body {
 font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-  
-#animated-heading {
-    font-size: 36px;
-    margin-bottom: 20px;
+
+.anime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    margin: 0;
+    
+  }
+
+  #tagline {
+    font-size: 3em;
+    font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #333; /* Add a border to simulate cursor */
-  }
-  
-  #animated-heading.typing {
-    animation: typing 2s steps(22), blink .5s step-end infinite;
+    text-align: center; /* Center the text */
+    animation: typing 4s steps(30) 1s forwards;
   }
 
   @keyframes typing {
@@ -30,17 +36,25 @@ font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       width: 100%;
     }
   }
-  
-  @keyframes blink-caret {
-    from, to {
+
+  @keyframes erasing {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+  /* @keyframes blinking-caret {
+    from,
+    to {
       border-color: transparent;
     }
     50% {
       border-color: #333;
     }
-  }
-
-
+  } */
 
 
 * {
@@ -51,7 +65,7 @@ font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 .header {
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/banner.png);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(new-images/Picsart_23-10-08_14-20-59-088.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -213,7 +227,12 @@ p {
 
 .course-col {
     flex-basis: 31%;
-    background: rgb(222 221 246);
+    background-image:url(new-images/Picsart_23-10-08_15-17-36-448.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
     border-radius: 10px;
     margin-bottom: 5%;
     padding: 20px 12px;
@@ -221,6 +240,12 @@ p {
     box-sizing: border-box;
 
 }
+
+.course-col p {
+
+    color: whitesmoke;
+}
+
 
 h3 {
 

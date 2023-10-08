@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #tagline {
+      font-size: 2em;
+      font-family: 'Arial', sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center; /* Center the text */
+      border-right: 2px solid #333;
+      animation: typing 4s steps(30) 1s forwards, blinking-caret 0.5s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes erasing {
+      from {
+        width: 100%;
+      }
+      to {
+        width: 0;
+      }
+    }
+
+    @keyframes blinking-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="tagline"></div>
+
+  <script>
+    const taglineParts = ["We Secure", "We Code", "We Deliver"];
+    const taglineElement = document.getElementById('tagline');
+    let currentPartIndex = 0;
+
+    function typeText(text, callback) {
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        taglineElement.textContent = text.slice(0, i);
+        i++;
+        if (i > text.length) {
+          clearInterval(typingInterval);
+          setTimeout(callback, 1000); // Wait for 1 second after typing
+        }
+      }, 100);
+    }
+
+    function eraseText(callback) {
+      let i = taglineElement.textContent.length;
+      const erasingInterval = setInterval(() => {
+        taglineElement.textContent = taglineElement.textContent.slice(0, i);
+        i--;
+        if (i < 0) {
+          clearInterval(erasingInterval);
+          setTimeout(callback, 1000); // Wait for 1 second after erasing
+        }
+      }, 100);
+    }
+
+    function nextTagline() {
+      eraseText(() => {
+        currentPartIndex = (currentPartIndex + 1) % taglineParts.length;
+        typeText(taglineParts[currentPartIndex], nextTagline);
+      });
+    }
+
+    // Start the animation
+    typeText(taglineParts[currentPartIndex], nextTagline);
+  </script>
+</body>
+</html>
